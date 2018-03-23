@@ -15,21 +15,25 @@
     "build": "npm-run-all build-css build-js",
     "serve": "serve dist -p 3000",
     "lint": "stylelint 'src/**/*.scss' && standard",
-    "test": ""
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "dependencies": {
     "axios": "^0.16.2",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "inuitcss": "^6.0.0",
     "node-sass-chokidar": "^1.2.0",
     "npm-run-all": "^4.1.2",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
-    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
     "react-static": "^5.6.2"
   },
   "devDependencies": {
     "eslint-config-react-tools": "1.x.x",
     "husky": "^0.14.3",
+    "jest": "^22.4.3",
     "lint-staged": "^7.0.0",
     "sassaby": "^2.1.1",
     "serve": "^6.1.0",
@@ -44,5 +48,17 @@
     "src/**/*.scss": [
       "stylelint"
     ]
+  },
+  "jest": {
+    "setupFiles": [
+      "<rootDir>/config/testSetup.js"
+    ],
+    "moduleNameMapper": {
+      "^.+\\.(css|less)$": "<rootDir>/config/__mocks__/styleMock.js",
+      "^.+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/config/__mocks__/fileMock.js"
+    }
+  },
+  "standard": {
+    "globals": [ "describe", "it", "expect" ]
   }
 }
