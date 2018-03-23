@@ -1,10 +1,10 @@
 body {
-  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial,
-    'Lucida Grande', sans-serif;
-  font-weight: 300;
-  font-size: 16px;
   margin: 0;
   padding: 0;
+
+  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
 }
 
 .App {
@@ -12,14 +12,17 @@ body {
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
   height: 120px;
+  animation: App-logo-spin infinite 20s linear;
 }
 
 .App-header {
-  background-color: #ddd;
   height: 170px;
+
   padding: 20px;
+
+  background-color: #ddd;
+
   color: black;
 }
 
@@ -35,6 +38,7 @@ body {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

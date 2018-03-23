@@ -4,13 +4,24 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "react-static start",
+    "precommit": "lint-staged",
+    "prepush": "yarn test",
+    "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
+    "start-js": "react-static start",
+    "start": "npm-run-all -p watch-css start-js",
     "stage": "react-static build --staging",
-    "build": "react-static build",
-    "serve": "serve dist -p 3000"
+    "build-js": "react-static build",
+    "build": "npm-run-all build-css build-js",
+    "serve": "serve dist -p 3000",
+    "lint": "stylelint 'src/**/*.scss' && standard",
+    "test": ""
   },
   "dependencies": {
     "axios": "^0.16.2",
+    "inuitcss": "^6.0.0",
+    "node-sass-chokidar": "^1.2.0",
+    "npm-run-all": "^4.1.2",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-router": "^4.2.0",
@@ -18,6 +29,20 @@
   },
   "devDependencies": {
     "eslint-config-react-tools": "1.x.x",
-    "serve": "^6.1.0"
+    "husky": "^0.14.3",
+    "lint-staged": "^7.0.0",
+    "sassaby": "^2.1.1",
+    "serve": "^6.1.0",
+    "standard": "^11.0.1",
+    "stylelint": "^9.1.1",
+    "stylelint-order": "^0.8.1"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,tsx}": [
+      "standard"
+    ],
+    "src/**/*.scss": [
+      "stylelint"
+    ]
   }
 }

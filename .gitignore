@@ -6,6 +6,7 @@
 
 # production
 /dist
+src/**/*.css
 
 # misc
 .DS_Store
