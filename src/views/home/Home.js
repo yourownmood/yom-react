@@ -1,10 +1,13 @@
-import React, { Component } from 'react'
-import { hot } from 'react-hot-loader'
+// @flow
+
+import * as React from 'react'
 
 import './Home.css'
 import logo from '../../assets/logo.png'
 
-class Home extends Component {
+type Props = {}
+
+class Home extends React.Component<Props> {
   render () {
     return (
       <div className='App'>
@@ -20,4 +23,4 @@ class Home extends Component {
   }
 }
 
-export default hot(module)(Home)
+export default Home

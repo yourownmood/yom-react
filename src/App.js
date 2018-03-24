@@ -1,13 +1,23 @@
-import React, { Component } from 'react'
+// @flow
+
+import * as React from 'react'
+// $FlowFixMe
 import { hot } from 'react-hot-loader'
 
+import Header from './components/header/Header'
 import Routes from './Routes'
+
 import './styles/main.css'
 
-class App extends Component {
+type Props = {}
+
+class App extends React.Component<Props> {
   render () {
     return (
-      <Routes />
+      <div>
+        <Header />
+        <Routes />
+      </div>
     )
   }
 }

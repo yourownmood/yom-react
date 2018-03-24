@@ -1,10 +1,14 @@
-import React, { Component } from 'react'
+// @flow
+
+import * as React from 'react'
 import { Router, Route, Switch } from 'react-static'
 
 import Home from './views/home/Home'
 import Contact from './views/contact/Contact'
 
-class Routes extends Component {
+type Props = {}
+
+class Routes extends React.Component<Props> {
   render () {
     return (
       <Router>

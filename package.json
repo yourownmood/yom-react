@@ -20,8 +20,10 @@
   },
   "dependencies": {
     "axios": "^0.16.2",
+    "babel-eslint": "^8.2.2",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "eslint-plugin-flowtype": "^2.46.1",
     "inuitcss": "^6.0.0",
     "node-sass-chokidar": "^1.2.0",
     "npm-run-all": "^4.1.2",
@@ -30,7 +32,9 @@
     "react-static": "^5.6.2"
   },
   "devDependencies": {
+    "babel-preset-flow": "^6.23.0",
     "eslint-config-react-tools": "1.x.x",
+    "flow-bin": "^0.68.0",
     "husky": "^0.14.3",
     "jest": "^22.4.3",
     "lint-staged": "^7.0.0",
@@ -41,7 +45,7 @@
     "stylelint-order": "^0.8.1"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,json,tsx}": [
+    "src/**/*.{js,jsx}": [
       "standard"
     ],
     "src/**/*.scss": [
@@ -62,6 +66,8 @@
       "describe",
       "it",
       "expect"
-    ]
+    ],
+    "parser": "babel-eslint",
+    "plugins": ["flowtype"]
   }
 }

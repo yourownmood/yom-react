@@ -1,9 +1,12 @@
-import React, { Component } from 'react'
-import { hot } from 'react-hot-loader'
+// @flow
+
+import * as React from 'react'
 
 import logo from '../../assets/logo.png'
 
-class Contact extends Component {
+type Props = {}
+
+class Contact extends React.Component<Props> {
   render () {
     return (
       <div className='App'>
@@ -19,4 +22,4 @@ class Contact extends Component {
   }
 }
 
-export default hot(module)(Contact)
+export default Contact
