@@ -35,10 +35,14 @@ $scroll-box-list-height: 305px;
 // LIST
 
 .scroll-box__list {
-  width: 2200px;
+  width: 300%;
   height: $scroll-box-list-height;
 
   list-style: none;
+
+  @include mq($from: mobileLandscape) {
+    width: 2200px;
+  }
 }
 
 // === ANIMATIONS ===

@@ -12,12 +12,15 @@
   position: relative;
 
   float: left;
-
-  width: 550px;
+  width: 25%;
   min-width: 25%;
   height: 100%;
 
   background-color: $yom-dusty;
+
+  @include mq($from: mobileLandscape) {
+    width: 550px;
+  }
 }
 
 // === ELEMENTS ===
@@ -40,7 +43,7 @@
   &:hover,
   &:focus {
     .scroll-box-item__overlay {
-      opacity: 1;
+      opacity: 0;
     }
   }
 }
@@ -64,7 +67,7 @@
 
   font-size: 17px;
 
-  opacity: 0;
+  opacity: 1;
 }
 
 // TITLE
