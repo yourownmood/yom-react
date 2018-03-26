@@ -1,5 +1,5 @@
 // --------------------------------------------------
-// +++ REACT-INUITCSS-BOILERPLATE +++
+// +++ YOM +++
 // --------------------------------------------------
 
 
@@ -10,6 +10,7 @@
 @import "settings/react-inuitcss-boilerplate.settings.config";
 @import "settings/settings.core"; // (requires, inuitcss)
 @import "settings/react-inuitcss-boilerplate.settings.global";
+@import "settings/settings.colors";
 
 
 /**
@@ -17,6 +18,7 @@
  */
 @import "tools/tools.clearfix"; // (requires, inuitcss)
 @import "tools/tools.font-size"; // (requires, inuitcss)
+@import "tools/tools.fonts";
 @import "tools/tools.hidden"; // (requires, inuitcss)
 @import "tools/tools.sass-mq"; // (requires, sass-mq)
 @import "tools/tools.aliases";
@@ -55,6 +57,7 @@
 /**
  * UTILITIES
  */
+@import "utilities/utilities.bg-position";
 @import "utilities/utilities.clearfix"; // (requires, inuitcss)
 @import "utilities/utilities.hide"; // (requires, inuitcss)
 @import "utilities/utilities.spacings"; // (requires, inuitcss)

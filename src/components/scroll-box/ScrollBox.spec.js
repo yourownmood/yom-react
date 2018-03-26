@@ -5,9 +5,13 @@ import { shallow } from 'enzyme'
 
 import ScrollBox from './ScrollBox'
 
+const props = {
+  onToggleClick: jest.fn()
+}
+
 describe('ScrollBox', () => {
   it('should render without crashing', () => {
-    const component = shallow(<ScrollBox />)
+    const component = shallow(<ScrollBox {...props} />)
     expect(component.find('.scroll-box').length).toBe(1)
   })
 })

@@ -1,0 +1,19 @@
+// --------------------------------------------------
+// +++ TOOLS FONTS +++
+// --------------------------------------------------
+
+
+// === TOOLS ===
+// --------------------------------------------------
+
+// OPEN-SANS
+
+@mixin font-open-sans() {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+
+// DOMINE
+
+@mixin font-domine {
+  font-family: 'Domine', Times, Georgia, serif;
+}

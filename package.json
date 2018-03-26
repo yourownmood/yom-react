@@ -21,6 +21,8 @@
   "dependencies": {
     "axios": "^0.16.2",
     "babel-eslint": "^8.2.2",
+    "babel-preset-stage-1": "^6.24.1",
+    "classnames": "^2.2.5",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "eslint-plugin-flowtype": "^2.46.1",
@@ -29,7 +31,8 @@
     "npm-run-all": "^4.1.2",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
-    "react-static": "^5.6.2"
+    "react-static": "^5.6.2",
+    "react-transition-group": "^2.2.1"
   },
   "devDependencies": {
     "babel-preset-flow": "^6.23.0",
@@ -63,11 +66,15 @@
   },
   "standard": {
     "globals": [
+      "jest",
       "describe",
       "it",
-      "expect"
+      "expect",
+      "HTMLDivElement"
     ],
     "parser": "babel-eslint",
-    "plugins": ["flowtype"]
+    "plugins": [
+      "flowtype"
+    ]
   }
 }

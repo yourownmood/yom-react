@@ -2,6 +2,7 @@
 // +++ COMPONENT SCROLL-BOX-ITEM +++
 // --------------------------------------------------
 
+@import "../../styles/settings/settings.colors";
 
 // === BASE ===
 // --------------------------------------------------
@@ -9,5 +10,82 @@
 // SCROLL-BOX-ITEM
 
 .scroll-box-item {
-  border: 1px solid #f00;
+  position: relative;
+
+  float: left;
+
+  width: 550px;
+  min-width: 25%;
+  height: 100%;
+
+  background-color: $yom-dusty;
+}
+
+// === ELEMENTS ===
+// --------------------------------------------------
+
+// LINK
+
+.scroll-box-item__link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  text-align: left;
+
+  &:hover,
+  &:focus {
+    .scroll-box-item__overlay {
+      opacity: 1;
+    }
+  }
+}
+
+// OVERLAY
+
+.scroll-box-item__overlay {
+  position: absolute;
+  z-index: 2;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 30px 35px;
+
+  transition: opacity 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  background-color: rgba(0, 0, 0, 0.4);
+
+  color: $yom-white;
+
+  font-size: 17px;
+
+  opacity: 0;
+}
+
+// TITLE
+
+.scroll-box-item__title {
+  display: block;
+
+  font-weight: 700;
+}
+
+// LOGO
+
+.scroll-box-item__logo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  width: 25%;
+
+  margin: auto;
 }

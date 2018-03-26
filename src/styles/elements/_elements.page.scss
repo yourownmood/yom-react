@@ -10,6 +10,17 @@
 
 @import "node_modules/inuitcss/elements/elements.page";
 
+// === EXTENDS ===
+// --------------------------------------------------
+
+html,
+body {
+  width: 100%;
+
+  @include font-open-sans();
+  font-weight: 300;
+}
+
 // === DOCS ===
 // --------------------------------------------------
 

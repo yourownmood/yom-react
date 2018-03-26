@@ -3,6 +3,13 @@
 // --------------------------------------------------
 
 
+// === VARIABLES ===
+// --------------------------------------------------
+
+// LIST-HEIGHT
+
+$scroll-box-list-height: 305px;
+
 // === BASE ===
 // --------------------------------------------------
 
@@ -12,4 +19,59 @@
   position: relative;
 
   width: 100%;
+
+  transform: translate3d(0, 0, 0);
+
+  overflow-x: scroll;
+  overflow-y: hidden;
+
+  -webkit-overflow-scrolling: touch;
+  will-change: max-height;
+}
+
+// === ELEMENTS ===
+// --------------------------------------------------
+
+// LIST
+
+.scroll-box__list {
+  width: 2200px;
+  height: $scroll-box-list-height;
+
+  list-style: none;
+}
+
+// === ANIMATIONS ===
+// --------------------------------------------------
+
+// ENTER FROM
+
+.scroll-box--animate-enter {
+  height: 0;
+
+  visibility: visible;
+}
+
+// ENTER TO
+
+.scroll-box--animate-enter.scroll-box--animate-enter-active {
+  height: $scroll-box-list-height;
+
+  transition: height 500ms ease-in-out;
+}
+
+// EXIT FROM
+
+.scroll-box--animate-exit {
+  height: $scroll-box-list-height;
+}
+
+// EXIT TO
+
+.scroll-box--animate-exit.scroll-box--animate-exit-active {
+  height: 0;
+
+  transition: height 400ms ease-in-out;
+
+  overflow-y: hidden;
 }
