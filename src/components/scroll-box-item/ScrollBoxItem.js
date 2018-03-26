@@ -4,8 +4,6 @@ import * as React from 'react'
 import { Link } from 'react-static'
 import ClassNames from 'classnames'
 
-import './ScrollBoxItem.css'
-
 type Props = {
   title: string,
   client: string,

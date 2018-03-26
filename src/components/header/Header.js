@@ -3,8 +3,6 @@
 import * as React from 'react'
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
 
-import './Header.css'
-
 import ScrollBox from '../scroll-box/ScrollBox'
 
 type Props = {}

@@ -2,7 +2,6 @@
 
 import * as React from 'react'
 
-import './Home.css'
 import logo from '../../assets/logo.png'
 import Header from '../../components/header/Header'
 

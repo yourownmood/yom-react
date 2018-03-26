@@ -50,8 +50,10 @@
 
 /**
  * COMPONENTS
- * Imports for components should be handled within the component itself.
  */
+@import "../components/header/Header.scss";
+@import "../components/scroll-box/ScrollBox.scss";
+@import "../components/scroll-box-item/ScrollBoxItem.scss";
 
 
 /**
