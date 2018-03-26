@@ -1,4 +1,7 @@
 import * as React from 'react'
+
+import projectsData from './src/feeds/projects.json'
+import profilesData from './src/feeds/profiles.json'
 // Though this file is optional, there are SO MANY COOL THINGS you can do here.
 // Read the docs at https://github.com/nozzle/react-static/blob/master/README.md to learn more!
 
@@ -6,8 +9,8 @@ import * as React from 'react'
 // https://github.com/nozzle/react-static/blob/master/docs/api.md#getroutes
 // https://github.com/nozzle/react-static/blob/master/examples/custom-routing/static.config.js
 
-import projectsData from './src/feeds/projects.json'
-const projectPages = projectsData.map(project => ({ path: `/project/${project.url}` }))
+const projectPages = projectsData.map(project => ({ path: `${project.url}`, component: 'src/views/project/Project' }))
+const profilePages = profilesData.map(profile => ({ path: `${profile.url}`, component: 'src/views/profile/Profile' }))
 
 export default {
   siteRoot: 'https://yourownmood.nl',
@@ -15,12 +18,19 @@ export default {
   getRoutes: async () => {
     return [
       {
-        path: '/'
+        path: '/',
+        component: 'src/views/home/Home'
       },
       {
-        path: '/contact'
+        path: '/about',
+        component: 'src/views/about/About'
       },
-      ...projectPages
+      {
+        path: '/contact',
+        component: 'src/views/contact/Contact'
+      },
+      ...projectPages,
+      ...profilePages
     ]
   },
   Document: ({ Html, Head, Body, children, siteData, renderMeta }) => (

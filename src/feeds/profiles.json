@@ -1,0 +1,30 @@
+[
+  {
+    "url": "/profile/steven-bax",
+    "name": "Steven Bax",
+    "heroImgFull": "../../assets/images/profile/steven/profile_stevenbax-full.jpg",
+    "heroImgPalm": "../../assets/images/profile/steven/profile_stevenbax-768.jpg",
+    "heroImgPhone": "../../assets/images/profile/steven/profile_stevenbax-480.jpg",
+    "heroImgPosition": "tc",
+    "profileDescription": "I work on products and long-running projects as a Front-end developer. Specialised in CSS development and architecture. I focus on implementing design while setting up a scalable, maintainable and good performing CSS architecture and workflow.",
+    "role": "Freelance Front-end developer (CSS specialist)",
+    "expertise": "Javascript, React, HTML, a11y, SCSS, itcss/inuitcss",
+    "projects": "LeasePlan, FedEx, TNT, NEMO Science Museum, KRO, Budget Energie",
+    "email": "sbax@yourownmood.nl",
+    "linkedin": "linkedin.com/in/steven-bax"
+  },
+  {
+    "url": "/profile/gert-jan-de-goede",
+    "name": "Gert-Jan de Goede",
+    "heroImgFull": "../../assets/images/profile/gertjan/profile_gertjandegoede-full.jpg",
+    "heroImgPalm": "../../assets/images/profile/gertjan/profile_gertjandegoede-768.jpg",
+    "heroImgPhone": "../../assets/images/profile/gertjan/profile_gertjandegoede-480.jpg",
+    "heroImgPosition": "cc",
+    "profileDescription": "Working as a User Experience and Visual Designer. Mainly for digital platforms and products. Big fan of scrum methodology. Started years ago in branding & identity and now translating and presenting those brands in an online environment.",
+    "role": "Freelance Visual Designer (Art Director)",
+    "expertise": "UX & UI design, Branding & Identity, Sketch, Scrum",
+    "projects": "FedEx, TNT, Allerhande, ING, Ultimaker, Liander, Sunweb",
+    "email": "gjdegoede@yourownmood.nl",
+    "linkedin": "linkedin.com/in/gert-jan-de-goede"
+  }
+]

@@ -1,6 +1,7 @@
 // @flow
 
 import * as React from 'react'
+import { Link } from 'react-static'
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
 
 import ScrollBox from '../scroll-box/ScrollBox'
@@ -37,7 +38,21 @@ class Header extends React.PureComponent<Props, State> {
             </CSSTransition>
           }
         </TransitionGroup>
-        <button onClick={this.handleToggle}>Header</button>
+
+        <p>
+          <b>Oh yes!</b>
+          We're definitely ready for
+          new projects in Q2 2018
+        </p>
+
+        <div>
+          <Link to='/'>Home</Link>
+          <Link to='/about'>About</Link>
+          <Link to='/contact'>Contact</Link>
+          <button onClick={this.handleToggle}>Header</button>
+        </div>
+
+        <img src='' alt='' />
       </header>
     )
   }
