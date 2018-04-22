@@ -16,6 +16,7 @@
     "serve": "serve dist -p 3000",
     "lint": "stylelint 'src/**/*.scss' && standard",
     "test": "jest",
+    "test:coverage": "yarn test --coverage",
     "test:watch": "jest --watch"
   },
   "dependencies": {
