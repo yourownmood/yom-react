@@ -3,7 +3,6 @@
 import * as React from 'react'
 
 import profilesData from '../../feeds/profiles.json'
-import Header from '../../components/header/Header'
 
 type Props = {
   location: Object,
@@ -40,7 +39,6 @@ class Profile extends React.Component<Props, State> {
 
     return (
       <div className='App'>
-        <Header />
         <header className='App-header'>
           <h1 className='App-title'>Profile: {name}</h1>
         </header>

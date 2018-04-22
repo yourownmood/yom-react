@@ -54,11 +54,13 @@
 @import "../components/header/Header.scss";
 @import "../components/scroll-box/ScrollBox.scss";
 @import "../components/scroll-box-item/ScrollBoxItem.scss";
+@import "../components/we-are-open/WeAreOpen.scss";
 
 
 /**
  * UTILITIES
  */
+@import "utilities/utilities.animation";
 @import "utilities/utilities.bg-position";
 @import "utilities/utilities.clearfix"; // (requires, inuitcss)
 @import "utilities/utilities.hide"; // (requires, inuitcss)

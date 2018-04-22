@@ -5,9 +5,7 @@ import * as React from 'react'
 import projectsData from '../../feeds/projects.json'
 import ScrollBoxItem from '../scroll-box-item/ScrollBoxItem'
 
-type Props = {
-  onToggleClick: () => void
-}
+type Props = {}
 
 class ScrollBox extends React.PureComponent<Props> {
   scrollBox: ?HTMLDivElement
@@ -33,8 +31,6 @@ class ScrollBox extends React.PureComponent<Props> {
   }
 
   render () {
-    const { onToggleClick } = this.props
-
     return (
       <div className='scroll-box' ref={(scrollBox) => { this.scrollBox = scrollBox }}>
         {projectsData && projectsData.length &&
@@ -49,7 +45,6 @@ class ScrollBox extends React.PureComponent<Props> {
                 thumb={project.projectThumb}
                 thumbPosition={project.projectThumbPosition}
                 logo={project.projectLogo}
-                onToggleClick={onToggleClick}
               />
             ))}
           </ul>

@@ -1,0 +1,44 @@
+// --------------------------------------------------
+// +++ COMPONENT WE-ARE-OPEN +++
+// --------------------------------------------------
+
+
+// === BASE ===
+// --------------------------------------------------
+
+// WE-ARE-OPEN
+
+.we-are-open {
+  position: relative;
+  top: 30px;
+  left: 30px;
+
+  margin: 0;
+  padding: 0;
+
+  @include font-domine();
+  font-size: 15px;
+
+  @include mq($until: desktop) {
+    display: none;
+  }
+}
+
+// === ELEMENTS ===
+// --------------------------------------------------
+
+// TITLE
+
+.we-are-open__title {
+  display: block;
+
+  font-weight: 700;
+}
+
+// TEXT
+
+.we-are-open__text {
+  display: block;
+
+  padding-left: 35px;
+}

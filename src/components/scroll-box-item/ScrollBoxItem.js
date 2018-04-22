@@ -11,22 +11,16 @@ type Props = {
   color: string,
   thumb?: string,
   thumbPosition?: string,
-  logo?: string,
-  onToggleClick: () => void
+  logo?: string
 }
 
 class ScrollBox extends React.PureComponent<Props> {
-  handleToggle = () => {
-    this.props.onToggleClick()
-  }
-
   render () {
     const { client, color, logo, thumb, thumbPosition, title, url } = this.props
     return (
       <li className='scroll-box-item' style={{backgroundColor: color}}>
         <Link
           to={url}
-          onClick={this.handleToggle}
           className={ClassNames('scroll-box-item__link', thumbPosition ? {[`u-bg--${thumbPosition}`]: thumbPosition} : null)}
           style={thumb ? {backgroundImage: `url(${thumb})`} : null}
         >

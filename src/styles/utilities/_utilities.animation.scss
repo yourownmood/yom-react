@@ -1,0 +1,177 @@
+// --------------------------------------------------
+// +++ ANIMATIONS +++
+// --------------------------------------------------
+
+// === BASE ===
+// --------------------------------------------------
+
+// ANIMATED
+// FADEIN
+// FADEINDOWN
+// FADEINLEFT
+// FADEINRIGHT
+// FADEINUP
+// FADEINUPDOUBLE
+
+// === DOCS ===
+// --------------------------------------------------
+
+// DOCS
+
+// --------------------------------------------------
+// +++ END +++
+// --------------------------------------------------
+
+
+// === BASE ===
+// --------------------------------------------------
+
+// ANIMATED
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+// FADEIN
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+// FADEINDOWN
+
+@keyframes fadeInDown {
+  0% {
+    transform: translate3d(0, -100%, 0);
+
+    opacity: 0;
+  }
+
+  100% {
+    transform: none;
+
+    opacity: 1;
+  }
+}
+
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+}
+
+// FADEINLEFT
+
+@keyframes fadeInLeft {
+  0% {
+    transform: translate3d(-100%, 0, 0);
+
+    opacity: 0;
+  }
+
+  100% {
+    transform: none;
+
+    opacity: 1;
+  }
+}
+
+.fadeInLeft {
+  -webkit-animation-name: fadeInLeft;
+  animation-name: fadeInLeft;
+}
+
+// FADEINRIGHT
+
+@keyframes fadeInRight {
+  0% {
+    transform: translate3d(100%, 0, 0);
+
+    opacity: 0;
+  }
+
+  100% {
+    transform: none;
+
+    opacity: 1;
+  }
+}
+
+.fadeInRight {
+  -webkit-animation-name: fadeInRight;
+  animation-name: fadeInRight;
+}
+
+// FADEINUP
+
+@keyframes fadeInUp {
+  0% {
+    transform: translate3d(0, 25%, 0);
+
+    opacity: 0;
+  }
+
+  100% {
+    transform: none;
+
+    opacity: 1;
+  }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+// FADEINUPDOUBLE
+
+@keyframes fadeInUpDouble {
+  0% {
+    transform: translate3d(0, 70%, 0);
+
+    opacity: 0;
+  }
+
+  100% {
+    transform: none;
+
+    opacity: 1;
+  }
+}
+
+.fadeInUpDouble {
+  -webkit-animation-name: fadeInUpDouble;
+  animation-name: fadeInUpDouble;
+}
+
+// === DOCS ===
+// --------------------------------------------------
+
+/*
+---
+name: Animations
+utilities:
+  - Animations
+hidePreview: true
+---
+
+**Options:**
+
+```html
+<div class="animated fadeIn fadeInDown fadeInLeft fadeInRight fadeInUp fadeInUpDouble">...</div>
+```
+
+*/
