@@ -21,4 +21,5 @@ class App extends React.Component<Props> {
   }
 }
 
+export { App }
 export default hot(module)(App)

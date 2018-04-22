@@ -1,0 +1,74 @@
+// --------------------------------------------------
+// +++ UTILITIES PAGE TRANSITIONS +++
+// --------------------------------------------------
+
+
+// === ANIMATIONS ===
+// --------------------------------------------------
+
+// ENTER FROM
+
+.page-transition-enter {
+  opacity: 0;
+
+  &:after {
+    position: fixed;
+    top: 0;
+
+    width: 0;
+    height: 100vh;
+
+    transform: translate3d(0, 0, 0);
+
+    transition-timing-function: ease-in-out;
+    animation-duration: 1s;
+
+    background: $yom-cod;
+    will-change: width, height;
+
+    content: '';
+  }
+}
+
+// ENTER TO
+
+.page-transition-enter.page-transition-enter-active {
+  transition: opacity 1000ms;
+
+  opacity: 1;
+
+  &:after {
+    animation-name: swipeInOut;
+  }
+}
+
+// EXIT FROM
+
+.page-transition-exit {
+  display: none;
+}
+
+// === KEYFRAMES ===
+// --------------------------------------------------
+
+// SWIPEINOUT
+
+@keyframes swipeInOut {
+  0% {
+    width: 0;
+  }
+
+  45% {
+    width: 100%;
+  }
+
+  55% {
+    width: 100%;
+    height: 100vh;
+  }
+
+  100% {
+    width: 100%;
+    height: 0;
+  }
+}
