@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "precommit": "lint-staged",
-    "prepush": "yarn test",
+    "prepush": "yarn test && yarn flow",
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
     "start-js": "react-static start",
@@ -32,6 +32,7 @@
     "npm-run-all": "^4.1.2",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-router": "^4.2.0",
     "react-static": "^5.6.2",
     "react-transition-group": "^2.2.1",
     "wowjs": "^1.1.3"

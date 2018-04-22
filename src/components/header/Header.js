@@ -2,14 +2,16 @@
 
 import * as React from 'react'
 import { Link } from 'react-static'
-import { withRouter } from 'react-router'
+import { withRouter, type RouterHistory } from 'react-router'
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
 import { WOW } from 'wowjs'
 
 import ScrollBox from '../scroll-box/ScrollBox'
 import WeAreOpen from '../we-are-open/WeAreOpen'
 
-type Props = {}
+type Props = {
+  history: RouterHistory
+}
 
 type State = {
   isOpen: boolean
@@ -23,7 +25,7 @@ class Header extends React.PureComponent<Props, State> {
   }
 
   componentWillMount () {
-    this.unlisten = this.props.history.listen((location, action) => {
+    this.props.history.listen((location, action) => {
       this.setState({ isOpen: false })
     })
   }
@@ -35,10 +37,6 @@ class Header extends React.PureComponent<Props, State> {
 
   componentDidUpdate () {
     wow.sync()
-  }
-
-  componentWillUnmount () {
-    this.unlisten()
   }
 
   handleToggle = () => {

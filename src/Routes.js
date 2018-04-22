@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 import { Route, Switch } from 'react-static'
-import { withRouter } from 'react-router'
+import { withRouter, type Location } from 'react-router'
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
 
 import Header from './components/header/Header'
@@ -12,7 +12,9 @@ import Contact from './views/contact/Contact'
 import Project from './views/project/Project'
 import Profile from './views/profile/Profile'
 
-type Props = {}
+type Props = {
+  location: Location
+}
 
 class Routes extends React.Component<Props> {
   render () {
