@@ -27,4 +27,15 @@ describe('Header', () => {
     const component = shallow(<Header history={history} />)
     expect(component.find('.header').length).toBe(1)
   })
+
+  it('should toggle CSSTransition when isOpen', () => {
+    const component = shallow(<Header history={history} />)
+    const toggle = component.find('button')
+    toggle.simulate('click')
+    expect(component.state().isOpen).toBe(true)
+    expect(component.find('CSSTransition')).toHaveLength(1)
+    toggle.simulate('click')
+    expect(component.state().isOpen).toBe(false)
+    expect(component.find('CSSTransition')).toHaveLength(0)
+  })
 })
