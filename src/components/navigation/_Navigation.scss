@@ -1,0 +1,55 @@
+// --------------------------------------------------
+// +++ COMPONENT NAVIGATION +++
+// --------------------------------------------------
+
+
+// === BASE ===
+// --------------------------------------------------
+
+// NAVIGATION
+
+.navigation {
+  position: relative;
+}
+
+// === PARTS ===
+// --------------------------------------------------
+
+// ITEM
+
+.navigation__item {
+  margin-right: 13px;
+  margin-left: 13px;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+// LINK
+
+.navigation__link {
+  border: 0;
+
+  background-color: none;
+
+  color: $yom-dusty;
+
+  font-size: 17px;
+  font-weight: 500;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: $yom-cod;
+
+    text-decoration: underline;
+  }
+}

@@ -1,11 +1,12 @@
 // @flow
 
 import * as React from 'react'
-import { Link } from 'react-static'
 import { withRouter, type RouterHistory } from 'react-router'
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
 import { WOW } from 'wowjs'
 
+import Logo from '../logo/Logo'
+import Navigation from '../navigation/Navigation'
 import ScrollBox from '../scroll-box/ScrollBox'
 import WeAreOpen from '../we-are-open/WeAreOpen'
 
@@ -36,7 +37,7 @@ class Header extends React.PureComponent<Props, State> {
   }
 
   componentDidUpdate () {
-    wow.sync()
+    // wow.sync()
   }
 
   handleToggle = () => {
@@ -59,19 +60,12 @@ class Header extends React.PureComponent<Props, State> {
           }
         </TransitionGroup>
 
-        <div className='wow fadeIn' data-wow-duration='2s'>
+        <div className='header__hero wow fadeIn' data-wow-duration='2s'>
           <WeAreOpen title='Oh yes!'>
-            We're definitely ready for<br />new projects in Q2 2018
+            We're definitely ready for<br />new projects in Q3
           </WeAreOpen>
-
-          <div>
-            <Link to='/'>Home</Link>
-            <Link to='/about'>About</Link>
-            <Link to='/contact'>Contact</Link>
-            <button onClick={this.handleToggle}>Header</button>
-          </div>
-
-          <img src='' alt='' />
+          <Navigation handleToggle={this.handleToggle} />
+          <Logo />
         </div>
       </header>
     )

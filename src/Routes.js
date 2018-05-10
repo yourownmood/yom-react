@@ -27,18 +27,20 @@ class Routes extends React.Component<Props> {
         <TransitionGroup>
           <CSSTransition
             key={current}
-            timeout={1000}
+            timeout={800}
             classNames={className}
-            mountOnEnter
-            unmountOnExit
           >
-            <Switch>
-              <Route exact path='/' component={Home} />
-              <Route exact path='/about' component={About} />
-              <Route exact path='/contact' component={Contact} />
-              <Route exact path='/project/:client' component={Project} />
-              <Route exact path='/profile/:profile' component={Profile} />
-            </Switch>
+            <div>
+              <div className='page'>
+                <Switch location={current !== 'project' ? this.props.location : null}>
+                  <Route exact path='/' component={Home} />
+                  <Route exact path='/about' component={About} />
+                  <Route exact path='/contact' component={Contact} />
+                  <Route exact path='/project/:client' component={Project} />
+                  <Route exact path='/profile/:profile' component={Profile} />
+                </Switch>
+              </div>
+            </div>
           </CSSTransition>
         </TransitionGroup>
       </div>

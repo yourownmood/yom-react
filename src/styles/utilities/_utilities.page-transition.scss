@@ -3,17 +3,23 @@
 // --------------------------------------------------
 
 
+// === VARIABLES ===
+// --------------------------------------------------
+
+$page-transition-duration: 800ms;
+
 // === ANIMATIONS ===
 // --------------------------------------------------
 
 // ENTER FROM
 
 .page-transition-enter {
-  opacity: 0;
+  position: absolute;
 
   &:after {
     position: fixed;
     top: 0;
+    z-index: 3;
 
     width: 0;
     height: 100vh;
@@ -21,21 +27,27 @@
     transform: translate3d(0, 0, 0);
 
     transition-timing-function: ease-in-out;
-    animation-duration: 1s;
+    animation-duration: $page-transition-duration;
 
     background: $yom-cod;
     will-change: width, height;
 
     content: '';
   }
+
+  .page {
+    opacity: 0;
+  }
 }
 
 // ENTER TO
 
 .page-transition-enter.page-transition-enter-active {
-  transition: opacity 1000ms;
+  .page {
+    transition-delay: $page-transition-duration / 2;
 
-  opacity: 1;
+    opacity: 1;
+  }
 
   &:after {
     animation-name: swipeInOut;
@@ -45,7 +57,18 @@
 // EXIT FROM
 
 .page-transition-exit {
-  display: none;
+  position: relative;
+  z-index: 2;
+
+  opacity: 1;
+}
+
+.page-transition-exit.page-transition-exit-active {
+  .page {
+    transition-delay: $page-transition-duration / 2;
+
+    opacity: 0;
+  }
 }
 
 // === KEYFRAMES ===
