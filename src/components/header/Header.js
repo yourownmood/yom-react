@@ -3,7 +3,6 @@
 import * as React from 'react'
 import { withRouter, type RouterHistory } from 'react-router'
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
-import { WOW } from 'wowjs'
 
 import Logo from '../logo/Logo'
 import Navigation from '../navigation/Navigation'
@@ -18,8 +17,6 @@ type State = {
   isOpen: boolean
 }
 
-let wow
-
 class Header extends React.PureComponent<Props, State> {
   state = {
     isOpen: false
@@ -29,15 +26,6 @@ class Header extends React.PureComponent<Props, State> {
     this.props.history.listen((location, action) => {
       this.setState({ isOpen: false })
     })
-  }
-
-  componentDidMount () {
-    wow = new WOW()
-    wow.init()
-  }
-
-  componentDidUpdate () {
-    // wow.sync()
   }
 
   handleToggle = () => {
@@ -60,7 +48,7 @@ class Header extends React.PureComponent<Props, State> {
           }
         </TransitionGroup>
 
-        <div className='header__hero wow fadeIn' data-wow-duration='2s'>
+        <div className='header__hero'>
           <WeAreOpen title='Oh yes!'>
             We're definitely ready for<br />new projects in Q3
           </WeAreOpen>
