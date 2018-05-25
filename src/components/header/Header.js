@@ -1,44 +1,53 @@
 // @flow
 
 import * as React from 'react'
-import { withRouter, type RouterHistory } from 'react-router'
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
+import ScrollAnimation from 'react-animate-on-scroll'
 
 import Logo from '../logo/Logo'
 import Navigation from '../navigation/Navigation'
 import ScrollBox from '../scroll-box/ScrollBox'
 import WeAreOpen from '../we-are-open/WeAreOpen'
+import Hamburger from '../hamburger/Hamburger'
 
 type Props = {
-  history: RouterHistory
+  pathname: string
 }
 
 type State = {
-  isOpen: boolean
+  projectIsOpen: boolean,
+  hamburgerIsOpen: boolean,
 }
 
 class Header extends React.PureComponent<Props, State> {
   state = {
-    isOpen: false
+    projectIsOpen: false,
+    hamburgerIsOpen: false
   }
 
-  componentWillMount () {
-    this.props.history.listen((location, action) => {
-      this.setState({ isOpen: false })
-    })
+  componentDidUpdate (prevProps: Props) {
+    if (this.props.pathname !== prevProps.pathname) {
+      this.setState({ projectIsOpen: false, hamburgerIsOpen: false })
+    }
   }
 
-  handleToggle = () => {
-    this.setState((oldState) => ({ isOpen: !oldState.isOpen }))
+  handleProjectToggle = () => {
+    this.setState((oldState) => ({ projectIsOpen: !oldState.projectIsOpen }))
+  }
+
+  handleHamburgerToggle = () => {
+    this.setState((oldState) => ({ hamburgerIsOpen: !oldState.hamburgerIsOpen }))
   }
 
   render () {
-    const { isOpen } = this.state
+    const { pathname } = this.props
+    const { projectIsOpen, hamburgerIsOpen } = this.state
+    const delay = 2
 
     return (
       <header className='header'>
         <TransitionGroup>
-          {isOpen &&
+          {projectIsOpen &&
             <CSSTransition
               classNames='scroll-box--animate'
               timeout={{ enter: 500, exit: 400 }}
@@ -49,16 +58,23 @@ class Header extends React.PureComponent<Props, State> {
         </TransitionGroup>
 
         <div className='header__hero'>
-          <WeAreOpen title='Oh yes!'>
-            We're definitely ready for<br />new projects in Q3
-          </WeAreOpen>
-          <Navigation handleToggle={this.handleToggle} />
-          <Logo />
+          <ScrollAnimation animateIn='fadeIn' duration={2} delay={delay}>
+            <WeAreOpen title='Oh yes!'>
+              We're definitely ready for<br />new projects in Q3
+            </WeAreOpen>
+            <div className='header__content'>
+              <Navigation showOnDesktop handleProjectToggle={this.handleProjectToggle} />
+              {hamburgerIsOpen &&
+                <Navigation showOnMobile handleProjectToggle={this.handleProjectToggle} />
+              }
+              <Hamburger pathname={pathname} handleHamburgerToggle={this.handleHamburgerToggle} />
+              <Logo />
+            </div>
+          </ScrollAnimation>
         </div>
       </header>
     )
   }
 }
 
-export { Header }
-export default withRouter(Header)
+export default Header

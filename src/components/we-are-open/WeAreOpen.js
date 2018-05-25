@@ -3,13 +3,13 @@
 import * as React from 'react'
 
 type Props = {
-  title: string,
-  children: React.Node
+  children: React.Node,
+  title: string
 }
 
 class WeAreOpen extends React.Component<Props> {
   render () {
-    const { title, children } = this.props
+    const { children, title } = this.props
 
     return (
       <p className='we-are-open'>

@@ -31,6 +31,7 @@
     "node-sass-chokidar": "^1.2.0",
     "npm-run-all": "^4.1.2",
     "react": "^16.0.0",
+    "react-animate-on-scroll": "^2.1.4",
     "react-dom": "^16.0.0",
     "react-router": "^4.2.0",
     "react-static": "^5.6.2",

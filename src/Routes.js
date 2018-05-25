@@ -18,12 +18,13 @@ type Props = {
 
 class Routes extends React.Component<Props> {
   render () {
-    const current = this.props.location.pathname.split('/')[1]
+    const { location } = this.props
+    const current = location.pathname.split('/')[1]
     const className = current !== 'project' ? 'page-transition' : ''
 
     return (
       <div>
-        <Header />
+        <Header pathname={location.pathname} />
         <TransitionGroup>
           <CSSTransition
             key={current}

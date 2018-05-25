@@ -11,7 +11,11 @@
 .logo {
   position: relative;
 
-  display: block;
+  display: inline-block;
 
   margin-top: 70px;
+
+  @include mq($until: mobileLandscape) {
+    margin-top: 55px;
+  }
 }
