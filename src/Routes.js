@@ -18,27 +18,30 @@ type Props = {
 
 class Routes extends React.Component<Props> {
   render () {
-    const current = this.props.location.pathname.split('/')[1]
+    const { location } = this.props
+    const current = location.pathname.split('/')[1]
     const className = current !== 'project' ? 'page-transition' : ''
 
     return (
       <div>
-        <Header />
+        <Header pathname={location.pathname} />
         <TransitionGroup>
           <CSSTransition
             key={current}
-            timeout={1000}
+            timeout={800}
             classNames={className}
-            mountOnEnter
-            unmountOnExit
           >
-            <Switch>
-              <Route exact path='/' component={Home} />
-              <Route exact path='/about' component={About} />
-              <Route exact path='/contact' component={Contact} />
-              <Route exact path='/project/:client' component={Project} />
-              <Route exact path='/profile/:profile' component={Profile} />
-            </Switch>
+            <div>
+              <div className='page'>
+                <Switch location={current !== 'project' ? this.props.location : null}>
+                  <Route exact path='/' component={Home} />
+                  <Route exact path='/about' component={About} />
+                  <Route exact path='/contact' component={Contact} />
+                  <Route exact path='/project/:client' component={Project} />
+                  <Route exact path='/profile/:profile' component={Profile} />
+                </Switch>
+              </div>
+            </div>
           </CSSTransition>
         </TransitionGroup>
       </div>

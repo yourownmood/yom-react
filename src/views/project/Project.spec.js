@@ -16,4 +16,11 @@ describe('Project view', () => {
     const component = shallow(<Project {...props} />)
     expect(component.find('.App').length).toBe(1)
   })
+
+  it('should update state on page change', () => {
+    const component = shallow(<Project {...props} />)
+    const spyUpdateState = jest.spyOn(component.instance(), 'updateState')
+    component.setProps({ location: { pathname: '/about' } })
+    expect(spyUpdateState).toHaveBeenCalled()
+  })
 })

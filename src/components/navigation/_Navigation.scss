@@ -1,0 +1,89 @@
+// --------------------------------------------------
+// +++ COMPONENT NAVIGATION +++
+// --------------------------------------------------
+
+
+// === BASE ===
+// --------------------------------------------------
+
+// NAVIGATION
+
+.navigation {
+  position: relative;
+
+  @include mq($until: mobileLandscape) {
+    margin-right: -5%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid $yom-dusty;
+
+    text-align: center;
+  }
+}
+
+// === PARTS ===
+// --------------------------------------------------
+
+// ITEM
+
+.navigation__item {
+  margin-right: 13px;
+  margin-left: 13px;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+// LINK
+
+.navigation__link {
+  border: 0;
+
+  background-color: none;
+
+  color: $yom-dusty;
+
+  @include font-open-sans();
+  font-size: 17px;
+  font-weight: 500;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: $yom-cod;
+
+    text-decoration: underline;
+  }
+}
+
+// === OPTIONS ===
+// --------------------------------------------------
+
+// DESKTOP
+
+.navigation--desktop {
+  display: none;
+
+  @include mq($from: mobileLandscape) {
+    display: block;
+  }
+}
+
+// MOBILE
+
+.navigation--mobile {
+  display: none;
+
+  @include mq($until: mobileLandscape) {
+    display: block;
+  }
+}

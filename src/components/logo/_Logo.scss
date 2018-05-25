@@ -1,0 +1,21 @@
+// --------------------------------------------------
+// +++ COMPONENT LOGO +++
+// --------------------------------------------------
+
+
+// === BASE ===
+// --------------------------------------------------
+
+// LOGO
+
+.logo {
+  position: relative;
+
+  display: inline-block;
+
+  margin-top: 70px;
+
+  @include mq($until: mobileLandscape) {
+    margin-top: 55px;
+  }
+}
